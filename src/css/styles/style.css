@@ -1,2 +1,11 @@
-@import "layouts/_header.css";
-@import "layouts/_pages.css";
+@import "common/_variables";
+@import "common/_global";
+@import "components/_buttons";
+@import "components/_comments";
+@import "components/_forms";
+@import "components/_grid";
+@import "layouts/_header";
+@import "layouts/_sidebar";
+@import "layouts/_footer";
+@import "layouts/_pages";
+@import "layouts/_posts";
