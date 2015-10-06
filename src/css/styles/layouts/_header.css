@@ -1,0 +1,20 @@
+@define-placeholder testing {
+	background: blue;
+	color: rgba(#00ff00, 0.5);
+	border: 3px solid red;
+	opacity: 0.8;
+}
+
+header {
+	@extend testing;
+	lost-column: 1/2;
+
+	h1, p {
+		@extend testing;
+	}
+
+	p {
+		position: absolute auto 20px 20px auto;
+		transition: ease-in-out;
+	}
+}
