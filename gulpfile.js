@@ -7,7 +7,8 @@ var gulp = require( "gulp" ),
 	$ = require( "gulp-load-plugins" )({
 		rename: {
 			"postcss-partial-import" : "partials",
-			"gulp-postcss" : "postcss"
+			"gulp-postcss" : "postcss",
+			"gulp-shrinkwrap" : "shrinkwrap"
 		}
 	}),
 	/** @type {Array} JS source files to concatenate and uglify */
@@ -206,6 +207,13 @@ gulp.task( "build", [
 	"uglify"
 ], function () {
 	console.log("Build is finished");
+});
+
+/** Lock package.json **/
+gulp.task( "shrinkwrap", function() {
+  return gulp.src("./package.json")
+    .pipe( $.shrinkwrap.lock() ) // modifies dependencies and devDependencies in package.json to specific versions
+    .pipe( gulp.dest( "./" ) ); // writes newly modified `package.json`
 });
 
 /** Gulp default task */
